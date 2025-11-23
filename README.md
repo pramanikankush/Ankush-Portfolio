@@ -2,8 +2,6 @@
 
 <div align="center">
 
-![Portfolio Banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
-
 **A cutting-edge AI Engineer portfolio featuring an interactive Gemini-powered digital twin**
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
