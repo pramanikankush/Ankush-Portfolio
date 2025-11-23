@@ -9,7 +9,7 @@
 [![Vite](https://img.shields.io/badge/Vite-6.2-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Gemini AI](https://img.shields.io/badge/Gemini-2.5_Flash-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
 
-[Live Demo](#) • [View Projects](#projects) • [Talk to AI Agent](#agent)
+[Live Demo](https://ankush-portfolio-colr.vercel.app/) • [View Projects](#projects) • [Talk to AI Agent](#agent)
 
 </div>
 
