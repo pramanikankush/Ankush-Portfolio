@@ -53,10 +53,10 @@ export const About: React.FC = () => {
                 clipPath: 'polygon(0% 2%, 3% 0%, 7% 2%, 12% 0%, 16% 1%, 20% 0%, 25% 2%, 30% 0%, 34% 1%, 38% 0%, 43% 2%, 47% 0%, 52% 1%, 56% 0%, 61% 2%, 65% 0%, 70% 1%, 74% 0%, 79% 2%, 83% 0%, 88% 1%, 92% 0%, 97% 2%, 100% 0%, 100% 100%, 0% 100%)'
               }}></div>
 
-              {/* Profile sketch portrait */}
+              {/* Profile portrait */}
               <img
-                src="/images/profile-sketch.jpg"
-                alt="Profile Sketch"
+                src="/images/profile.png"
+                alt="Profile Portrait"
                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700"
               />
 
