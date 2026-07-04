@@ -30,10 +30,10 @@ export const About: React.FC = () => {
             </h2>
 
             <p className="text-base md:text-xl text-neutral-700 leading-relaxed font-light mb-6 text-justify md:text-left">
-              Throughout my career in software engineering, I have always strived to push the boundaries of what code can "think."
+              I build software that thinks. While others write standard linear code, I design autonomous agent loops that reason, verify, and self-correct until a goal is met.
             </p>
             <p className="text-base md:text-xl text-neutral-700 leading-relaxed font-light text-justify md:text-left">
-              From fine-tuning small language models to orchestrating complex multi-agent swarms, I achieve my greatest potential when solving problems that require both creative design and rigorous logic. I don't just build apps; I build cognitive architectures.
+              From crafting context-rich RAG pipelines to orchestrating specialized multi-agent systems, I focus on building reliable agentic architectures. I am fascinated by loop engineering and inference-time compute budget optimization, building the next generation of cognitive software.
             </p>
           </div>
 
