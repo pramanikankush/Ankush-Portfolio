@@ -2,18 +2,18 @@ import React from 'react';
 import { Skill } from '../types';
 
 const skills: Skill[] = [
-    { name: 'Loop Engineering', level: 95, description: 'Designing autonomous agent loops that run, observe, and retry until a goal is met, instead of manually prompting each step.' },
-    { name: 'Agentic AI & Multi-Agent Systems', level: 92, description: 'Using specialized agents (planner, coder, tester, reviewer) coordinated by an orchestration layer for complex workflows.' },
-    { name: 'ReAct & Reason-Act-Observe Patterns', level: 90, description: 'Standard reasoning frameworks where agents reason, act with tools, observe results, and loop until a stop condition.' },
-    { name: 'Inference-Time Compute Engineering', level: 88, description: 'Treating tokens, steps, and loop depth as budgeted resources, optimizing for quality vs cost and latency.' },
-    { name: 'Advanced RAG & Sufficient Context Agents', level: 91, description: 'Dynamic, loop-driven retrieval that fetches just enough context for long-horizon tasks and self-corrects answers.' },
-    { name: 'Tool-Use & Code-Generation Agents', level: 94, description: 'Agents that write, debug, test, and commit code, call APIs, and run CI inside loops (e.g., Claude Code, Copilot, Codex).' },
-    { name: 'Harness & Context Engineering', level: 87, description: 'Building the “harness” (scheduling, memory, plugins, skills) around agents, not just prompts, so loops run reliably.' },
-    { name: 'Verification, Guardrails, and Maker–Checker', level: 89, description: 'Separating generating agents from verifying agents, adding confidence thresholds and deterministic checks before acting.' },
-    { name: 'Enterprise-Grade Agent Architectures', level: 85, description: 'Layered designs with permissions, audit logs, evaluation checkpoints, fallbacks, and policy enforcement for production agents.' },
-    { name: 'Observability & Evaluation for Loops', level: 86, description: 'Tracing each loop step, token usage, and decisions; measuring success/failure; and managing costs and runaway loops.' },
-    { name: 'Safety & Prompt-Injection Resilience', level: 90, description: 'Handling direct, indirect, and chained prompt injections, preventing loop hijacking, and stopping agents from self-trusting bad outputs.' },
-    { name: 'From Prompt Engineering to Loop Design Roles', level: 88, description: 'New career paths like loop engineer / agentic systems engineer, where the skill is designing systems that prompt agents on schedule and verify outcomes.' }
+    { name: 'Loop Engineering', level: 75, description: 'Designing autonomous agent loops that run, observe, and retry until a goal is met, instead of manually prompting each step.' },
+    { name: 'Agentic AI & Multi-Agent Systems', level: 70, description: 'Using specialized agents (planner, coder, tester, reviewer) coordinated by an orchestration layer for complex workflows.' },
+    { name: 'ReAct & Reason-Act-Observe Patterns', level: 72, description: 'Standard reasoning frameworks where agents reason, act with tools, observe results, and loop until a stop condition.' },
+    { name: 'Inference-Time Compute Engineering', level: 50, description: 'Treating tokens, steps, and loop depth as budgeted resources, optimizing for quality vs cost and latency.' },
+    { name: 'Advanced RAG & Sufficient Context Agents', level: 68, description: 'Dynamic, loop-driven retrieval that fetches just enough context for long-horizon tasks and self-corrects answers.' },
+    { name: 'Tool-Use & Code-Generation Agents', level: 75, description: 'Agents that write, debug, test, and commit code, call APIs, and run CI inside loops (e.g., Claude Code, Copilot, Codex).' },
+    { name: 'Harness & Context Engineering', level: 60, description: 'Building the “harness” (scheduling, memory, plugins, skills) around agents, not just prompts, so loops run reliably.' },
+    { name: 'Verification, Guardrails, and Maker–Checker', level: 65, description: 'Separating generating agents from verifying agents, adding confidence thresholds and deterministic checks before acting.' },
+    { name: 'Enterprise-Grade Agent Architectures', level: 55, description: 'Layered designs with permissions, audit logs, evaluation checkpoints, fallbacks, and policy enforcement for production agents.' },
+    { name: 'Observability & Evaluation for Loops', level: 62, description: 'Tracing each loop step, token usage, and decisions; measuring success/failure; and managing costs and runaway loops.' },
+    { name: 'Safety & Prompt-Injection Resilience', level: 65, description: 'Handling direct, indirect, and chained prompt injections, preventing loop hijacking, and stopping agents from self-trusting bad outputs.' },
+    { name: 'From Prompt Engineering to Loop Design Roles', level: 70, description: 'New career paths like loop engineer / agentic systems engineer, where the skill is designing systems that prompt agents on schedule and verify outcomes.' }
 ];
 
 export const SkillsExperience: React.FC = () => {
