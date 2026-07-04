@@ -2,18 +2,18 @@ import React from 'react';
 import { Skill } from '../types';
 
 const skills: Skill[] = [
-    { name: 'Large Language Models (LLMs)', level: 95 },
-    { name: 'Agentic Workflows (LangChain)', level: 90 },
-    { name: 'RAG Architecture', level: 92 },
-    { name: 'Prompt Engineering', level: 88 },
-    { name: 'Vector Databases (Pinecone/Chroma)', level: 85 },
-    { name: 'Fine-tuning & PEFT (LoRA)', level: 87 },
-    { name: 'Python & PyTorch', level: 85 },
-    { name: 'React & TypeScript', level: 80 },
-    { name: 'Multi-Agent Systems (AutoGen)', level: 83 },
-    { name: 'Embeddings & Semantic Search', level: 90 },
-    { name: 'Google Gemini API', level: 92 },
-    { name: 'OpenAI API & GPT Models', level: 88 },
+    { name: 'Loop Engineering', level: 95, description: 'Designing autonomous agent loops that run, observe, and retry until a goal is met, instead of manually prompting each step.' },
+    { name: 'Agentic AI & Multi-Agent Systems', level: 92, description: 'Using specialized agents (planner, coder, tester, reviewer) coordinated by an orchestration layer for complex workflows.' },
+    { name: 'ReAct & Reason-Act-Observe Patterns', level: 90, description: 'Standard reasoning frameworks where agents reason, act with tools, observe results, and loop until a stop condition.' },
+    { name: 'Inference-Time Compute Engineering', level: 88, description: 'Treating tokens, steps, and loop depth as budgeted resources, optimizing for quality vs cost and latency.' },
+    { name: 'Advanced RAG & Sufficient Context Agents', level: 91, description: 'Dynamic, loop-driven retrieval that fetches just enough context for long-horizon tasks and self-corrects answers.' },
+    { name: 'Tool-Use & Code-Generation Agents', level: 94, description: 'Agents that write, debug, test, and commit code, call APIs, and run CI inside loops (e.g., Claude Code, Copilot, Codex).' },
+    { name: 'Harness & Context Engineering', level: 87, description: 'Building the “harness” (scheduling, memory, plugins, skills) around agents, not just prompts, so loops run reliably.' },
+    { name: 'Verification, Guardrails, and Maker–Checker', level: 89, description: 'Separating generating agents from verifying agents, adding confidence thresholds and deterministic checks before acting.' },
+    { name: 'Enterprise-Grade Agent Architectures', level: 85, description: 'Layered designs with permissions, audit logs, evaluation checkpoints, fallbacks, and policy enforcement for production agents.' },
+    { name: 'Observability & Evaluation for Loops', level: 86, description: 'Tracing each loop step, token usage, and decisions; measuring success/failure; and managing costs and runaway loops.' },
+    { name: 'Safety & Prompt-Injection Resilience', level: 90, description: 'Handling direct, indirect, and chained prompt injections, preventing loop hijacking, and stopping agents from self-trusting bad outputs.' },
+    { name: 'From Prompt Engineering to Loop Design Roles', level: 88, description: 'New career paths like loop engineer / agentic systems engineer, where the skill is designing systems that prompt agents on schedule and verify outcomes.' }
 ];
 
 export const SkillsExperience: React.FC = () => {
@@ -48,14 +48,21 @@ export const SkillsExperience: React.FC = () => {
                             {skills.map((skill, index) => (
                                 <div
                                     key={index}
-                                    className="group opacity-0 animate-fadeInUp"
+                                    className="group opacity-0 animate-fadeInUp flex flex-col justify-between"
                                     style={{
                                         animationDelay: `${index * 0.1}s`,
                                         animationFillMode: 'forwards'
                                     }}
                                 >
-                                    <div className="flex justify-between mb-2 font-bold text-base md:text-lg tracking-tight">
-                                        <span>{skill.name}</span>
+                                    <div>
+                                        <div className="flex justify-between mb-1 font-bold text-base md:text-lg tracking-tight">
+                                            <span>{skill.name}</span>
+                                        </div>
+                                        {skill.description && (
+                                            <p className="text-neutral-600 text-xs md:text-sm leading-relaxed mb-3 font-light">
+                                                {skill.description}
+                                            </p>
+                                        )}
                                     </div>
                                     <div className="h-4 w-full bg-neutral-300 relative overflow-hidden">
                                         <div

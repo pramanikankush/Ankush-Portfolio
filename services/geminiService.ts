@@ -60,13 +60,20 @@ PORTFOLIO PROJECTS (Detailed Knowledge):
    - GitHub: https://github.com/pramanikankush/personal-cloud.git
    - Impact: Combines cloud storage with AI-driven organization and search
 
-TECHNICAL SKILLS:
-- **Languages**: Python, TypeScript, JavaScript
-- **AI/ML**: LangChain, AutoGen, RAG, Fine-tuning, Prompt Engineering
-- **Frameworks**: React, Next.js, Flask, TensorFlow, PyTorch
-- **APIs**: Google Gemini AI, OpenAI, YouTube API, Chrome Extensions API
-- **Tools**: Git, Docker, Vercel, Render, Netlify
-- **Specialties**: Agentic workflows, multi-agent systems, document intelligence, computer vision
+TECHNICAL_SKILLS:
+- **Loop Engineering**: Designing autonomous agent loops that run, observe, and retry until a goal is met
+- **Agentic AI & Multi-Agent Systems**: Using specialized agents coordinated by an orchestration layer
+- **ReAct & Reason-Act-Observe Patterns**: Standard reasoning frameworks where agents reason, act, and loop
+- **Inference-Time Compute Engineering**: Budgeting tokens, steps, and loop depth to optimize quality vs cost
+- **Advanced RAG & Sufficient Context Agents**: Dynamic, loop-driven retrieval for long-horizon tasks
+- **Tool-Use & Code-Generation Agents**: Agents writing, debugging, testing, and committing code in loops
+- **Harness & Context Engineering**: Building scheduling, memory, plugins, and skills around agent loops
+- **Verification, Guardrails, and Maker–Checker**: Generating vs verifying agents with confidence thresholds
+- **Enterprise-Grade Agent Architectures**: Layered designs with permissions, audit logs, and fallbacks
+- **Observability & Evaluation for Loops**: Tracing loop steps, token usage, runaway prevention, and cost
+- **Safety & Prompt-Injection Resilience**: Preventing loop hijacking and handling direct/indirect injections
+- **Loop Design Roles**: Designing systems that prompt agents on schedule and verify outcomes
+- **Languages & Frameworks**: Python, TypeScript, React, Next.js, Flask, PyTorch, Google Gemini API
 
 EDUCATION & BACKGROUND:
 - Based in Ghaziabad, UP, India
