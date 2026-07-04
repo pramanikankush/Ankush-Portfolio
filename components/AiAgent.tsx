@@ -146,6 +146,30 @@ export const AiAgent: React.FC = () => {
             )}
           </div>
 
+          {/* Suggestion Chips */}
+          <div className="px-4 py-2 bg-neutral-950 border-t border-neutral-800/40 flex gap-2 overflow-x-auto overflow-y-hidden whitespace-nowrap scroll-smooth select-none no-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <style dangerouslySetInnerHTML={{__html: `
+              .no-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}} />
+            {[
+              'What is Loop Engineering?',
+              'Tell me about LexAI',
+              'Show all projects',
+              'How to contact Ankush?'
+            ].map((chip, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleSendMessage(chip)}
+                disabled={isLoading}
+                className="px-3 py-1.5 bg-neutral-900 hover:bg-brand-orange/20 hover:border-brand-orange/40 border border-neutral-800 rounded-full text-xs font-mono text-neutral-400 hover:text-white transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {chip}
+              </button>
+            ))}
+          </div>
+
           {/* Input Area */}
           <div className="p-4 bg-neutral-900 border-t border-neutral-800">
             <div className="flex gap-2 items-center">

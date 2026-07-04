@@ -106,11 +106,38 @@ RESPONSE GUIDELINES:
 GOAL: Impress recruiters and clients with deep technical knowledge and showcase Ankush's unique blend of AI expertise and full-stack development skills.
 `;
 
-// Simple LRU Cache for responses
+// Persistent Response Cache in LocalStorage
 class ResponseCache {
   private cache = new Map<string, { response: string; timestamp: number }>();
-  private maxSize = 50;
-  private maxAge = 5 * 60 * 1000; // 5 minutes
+  private maxSize = 100;
+  private maxAge = 24 * 60 * 60 * 1000; // 24 hours persistence
+
+  constructor() {
+    this.loadFromLocalStorage();
+  }
+
+  private loadFromLocalStorage(): void {
+    try {
+      const data = typeof window !== 'undefined' ? localStorage.getItem('gemini_chat_cache') : null;
+      if (data) {
+        const parsed = JSON.parse(data);
+        this.cache = new Map(Object.entries(parsed));
+      }
+    } catch (e) {
+      console.error("Error loading cache from localStorage:", e);
+    }
+  }
+
+  private saveToLocalStorage(): void {
+    try {
+      if (typeof window !== 'undefined') {
+        const obj = Object.fromEntries(this.cache.entries());
+        localStorage.setItem('gemini_chat_cache', JSON.stringify(obj));
+      }
+    } catch (e) {
+      console.error("Error saving cache to localStorage:", e);
+    }
+  }
 
   get(key: string): string | null {
     const entry = this.cache.get(key);
@@ -119,6 +146,7 @@ class ResponseCache {
     // Check if expired
     if (Date.now() - entry.timestamp > this.maxAge) {
       this.cache.delete(key);
+      this.saveToLocalStorage();
       return null;
     }
 
@@ -129,16 +157,137 @@ class ResponseCache {
     // Implement LRU by deleting oldest if at capacity
     if (this.cache.size >= this.maxSize) {
       const firstKey = this.cache.keys().next().value;
-      this.cache.delete(firstKey);
+      if (firstKey) this.cache.delete(firstKey);
     }
 
     this.cache.set(key, { response, timestamp: Date.now() });
+    this.saveToLocalStorage();
   }
 
   clear(): void {
     this.cache.clear();
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('gemini_chat_cache');
+      }
+    } catch (e) {}
   }
 }
+
+// Client-side Rate Limiter to prevent API exhaustion
+class RateLimiter {
+  private requests: number[] = [];
+  private maxRequests = 5; // 5 requests
+  private windowMs = 60 * 1000; // per 1 minute window
+
+  checkLimit(): boolean {
+    const now = Date.now();
+    // Keep only timestamps within window
+    this.requests = this.requests.filter(timestamp => now - timestamp < this.windowMs);
+    
+    if (this.requests.length >= this.maxRequests) {
+      return false; // Rate limited
+    }
+
+    this.requests.push(now);
+    return true;
+  }
+
+  getSecondsToWait(): number {
+    if (this.requests.length === 0) return 0;
+    const oldest = this.requests[0];
+    const elapsed = Date.now() - oldest;
+    return Math.max(1, Math.ceil((this.windowMs - elapsed) / 1000));
+  }
+}
+
+// Static Responses to bypass API calls for simple greetings and common queries
+const getStaticResponse = (message: string): string | null => {
+  const clean = message.toLowerCase().trim();
+  
+  // Greetings bypass
+  const greetings = ['hi', 'hello', 'hey', 'yo', 'greetings', 'hola', 'hi protocol', 'hello protocol', 'hi there', 'hello there', 'hey there'];
+  if (greetings.includes(clean)) {
+    return "**Identity verified. Protocol v2.5 initialized.**\n\nHello! I am Ankush's digital twin. How can I assist you with his skills, projects, or experience today?";
+  }
+
+  // Name / Identity bypass
+  if (clean === 'who are you' || clean === 'what is your name' || clean.includes('your name') || clean.includes('who you are')) {
+    return "I am **Protocol**, the AI Digital Twin of Ankush Pramanik. I am powered by Gemini 2.5 Flash and have comprehensive knowledge of Ankush's agentic AI projects, engineering skills, and experience.";
+  }
+
+  // Contact / Socials bypass
+  if (clean === 'contact' || clean.includes('how to contact') || clean.includes('email') || clean.includes('socials') || clean === 'contact ankush' || clean.includes('contact info')) {
+    return "You can initialize contact with Ankush Pramanik through the following nodes:\n\n" +
+      "• 📧 **Email**: [ankushpramanik@gmail.com](mailto:ankushpramanik@gmail.com)\n" +
+      "• 💼 **LinkedIn**: [ankush-pramanik](https://www.linkedin.com/in/ankush-pramanik-853565259/)\n" +
+      "• 🐙 **GitHub**: [pramanikankush](https://github.com/pramanikankush)\n" +
+      "• 📸 **Instagram**: [@_.ankusshhhh._](https://www.instagram.com/_.ankusshhhh._/)";
+  }
+
+  // All Projects bypass
+  if (clean === 'show all projects' || clean === 'projects' || clean === 'show projects' || clean.includes('what projects') || clean.includes('your projects') || clean.includes('tell me about your projects')) {
+    return "Here are the selected projects Ankush has built:\n\n" +
+      "1. **LexAI - Legal RAG Advisor**\n" +
+      "   Intelligent legal document analysis with RAG architecture.\n" +
+      "   • [Live Demo](https://legal-rag-2.vercel.app/) | [GitHub](https://github.com/pramanikankush/legal-rag-2.git)\n\n" +
+      "2. **YouTube Stats Tracker Builder**\n" +
+      "   Chrome extension generator for YouTube channel analytics.\n" +
+      "   • [Live Demo](https://youtube-stats-extension-builder.vercel.app/) | [GitHub](https://github.com/pramanikankush/Youtube-stats-extension-builder.git)\n\n" +
+      "3. **Plant Health Analyzer**\n" +
+      "   AI-powered plant disease detection system.\n" +
+      "   • [Live Demo](https://plant-health-analyzer-1.onrender.com/) | [GitHub](https://github.com/pramanikankush/Plant-Health-Analyzer.git)\n\n" +
+      "4. **Smart Invoice Scanner**\n" +
+      "   AI invoice extraction and management platform.\n" +
+      "   • [Live Demo](https://your-invoice.onrender.com/) | [GitHub](https://github.com/pramanikankush/your-invoice.git)\n\n" +
+      "5. **Personal Cloud Storage**\n" +
+      "   AI-powered file management with Stripe payments.\n" +
+      "   • [Live Demo](https://personal-cloud-two.vercel.app/) | [GitHub](https://github.com/pramanikankush/personal-cloud.git)";
+  }
+
+  // Specific project bypasses
+  if (clean.includes('lexai')) {
+    return "**LexAI - Legal RAG Advisor**\n\n" +
+      "An intelligent legal document analysis system powered by Retrieval-Augmented Generation (RAG). It provides instant legal insights, case analysis, and document review with AI-driven precision.\n\n" +
+      "• **Tech Stack**: Next.js, Gemini AI, RAG, TypeScript\n" +
+      "• [Live Demo](https://legal-rag-2.vercel.app/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/legal-rag-2.git)";
+  }
+
+  if (clean.includes('youtube stats') || clean.includes('youtube tracker') || clean.includes('chrome extension')) {
+    return "**YouTube Stats Tracker Builder**\n\n" +
+      "Generate custom YouTube Chrome extensions instantly. Track channel statistics, subscriber counts, and video analytics in real-time with a personalized dashboard experience.\n\n" +
+      "• **Tech Stack**: Chrome API, YouTube API, TypeScript, React\n" +
+      "• [Live Demo](https://youtube-stats-extension-builder.vercel.app/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/Youtube-stats-extension-builder.git)";
+  }
+
+  if (clean.includes('plant health') || clean.includes('plant disease') || clean.includes('agriculture')) {
+    return "**Plant Health Analyzer**\n\n" +
+      "AI-powered disease detection and treatment system for plants. Upload plant images to receive instant diagnosis, treatment plans, progress tracking, and location-based alerts with PDF reports.\n\n" +
+      "• **Tech Stack**: Gemini AI, Python, Flask, Computer Vision\n" +
+      "• [Live Demo](https://plant-health-analyzer-1.onrender.com/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/Plant-Health-Analyzer.git)";
+  }
+
+  if (clean.includes('invoice scanner') || clean.includes('ocr') || clean.includes('invoice scanner')) {
+    return "**Smart Invoice Scanner**\n\n" +
+      "AI-powered invoice extraction and management system. Automatically scan, extract, edit, and verify invoice data with dashboard analytics and Excel export capabilities.\n\n" +
+      "• **Tech Stack**: Gemini AI, Python, Flask, OCR\n" +
+      "• [Live Demo](https://your-invoice.onrender.com/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/your-invoice.git)";
+  }
+
+  if (clean.includes('personal cloud') || clean.includes('cloud storage') || clean.includes('file management')) {
+    return "**Personal Cloud Storage**\n\n" +
+      "AI-powered file organization and secure cloud storage platform. Features intelligent file management, payment integration, responsive design, and smart search capabilities.\n\n" +
+      "• **Tech Stack**: Next.js, Gemini AI, Stripe, Clerk Auth\n" +
+      "• [Live Demo](https://personal-cloud-two.vercel.app/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/personal-cloud.git)";
+  }
+
+  return null;
+};
 
 // Singleton chat session manager
 class GeminiChatManager {
@@ -146,6 +295,7 @@ class GeminiChatManager {
   private chat: any = null;
   private ai: any = null;
   private cache = new ResponseCache();
+  private rateLimiter = new RateLimiter();
   private pendingRequests = new Map<string, Promise<string>>();
 
   private constructor() { }
@@ -178,25 +328,41 @@ class GeminiChatManager {
   }
 
   async sendMessage(message: string, retries = 3): Promise<string> {
-    // Check cache first
     const cacheKey = message.toLowerCase().trim();
+
+    // 1. Check static responses first (completely free)
+    const staticRes = getStaticResponse(message);
+    if (staticRes) {
+      return staticRes;
+    }
+
+    // 2. Check rate limit
+    if (!this.rateLimiter.checkLimit()) {
+      const waitTime = this.rateLimiter.getSecondsToWait();
+      return `⚠️ **Rate Limit Threshold Exceeded**\n\nProtocol system is cooling down to conserve token quota. Please retry in **${waitTime}s** to avoid API token exhaustion.`;
+    }
+
+    // 3. Check persistent localStorage cache
     const cachedResponse = this.cache.get(cacheKey);
     if (cachedResponse) {
       return cachedResponse;
     }
 
-    // Check if there's already a pending request for this message (debouncing)
+    // 4. Check if there's already a pending request (debouncing duplicate clicks)
     if (this.pendingRequests.has(cacheKey)) {
       return this.pendingRequests.get(cacheKey)!;
     }
 
-    // Create new request
+    // 5. Execute API request
     const requestPromise = this.executeRequest(message, retries);
     this.pendingRequests.set(cacheKey, requestPromise);
 
     try {
       const response = await requestPromise;
-      this.cache.set(cacheKey, response);
+      // Do not cache system malfunctions
+      if (response && !response.startsWith("System Malfunction:") && !response.startsWith("Error:")) {
+        this.cache.set(cacheKey, response);
+      }
       return response;
     } finally {
       this.pendingRequests.delete(cacheKey);
@@ -230,7 +396,7 @@ class GeminiChatManager {
           const delay = Math.min(1000 * Math.pow(2, attempt), 10000);
           await new Promise(resolve => setTimeout(resolve, delay));
 
-          // Reset chat session on error
+          // Reset chat session on error to avoid corrupted state
           this.chat = null;
         }
       }
