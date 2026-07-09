@@ -210,10 +210,10 @@ Applicant Tracking System with semantic matching & automated scoring
 - 🔗 [Live Demo](https://ai-resume-ats-ho41.onrender.com/)
 - 💻 [GitHub](https://github.com/pramanikankush/AI-Resume-ATS)
 
-### 4. **Smart Invoice Scanner**
-OCR-based invoice extraction and management
-- 🔗 [Live Demo](https://your-invoice.onrender.com/)
-- 💻 [GitHub](https://github.com/pramanikankush/your-invoice.git)
+### 4. **Code Explainer Enterprise**
+GenAI platform for deep code understanding & JUnit test generation
+- 🔗 [Live Demo](https://ai-code-explainer-frontend.onrender.com)
+- 💻 [GitHub](https://github.com/pramanikankush/AI-Code-Explainer-)
 
 ### 5. **Personal Cloud Storage**
 AI-powered file organization with Stripe integration

@@ -8,6 +8,7 @@ interface Project {
   image: string;
   demoLink: string;
   repoLink: string;
+  backendLink?: string;
 }
 
 const projects: Project[] = [
@@ -39,13 +40,14 @@ const projects: Project[] = [
     repoLink: "https://github.com/pramanikankush/AI-Resume-ATS"
   },
   {
-    title: "Smart Invoice Scanner",
-    category: "Document Intelligence",
-    description: "AI-powered invoice extraction and management system. Automatically scan, extract, edit, and verify invoice data with dashboard analytics and Excel export capabilities powered by Google Gemini AI.",
-    tech: ["Gemini AI", "Python", "Flask", "OCR"],
-    image: "/images/projects/invoice-scanner-preview.png",
-    demoLink: "https://your-invoice.onrender.com/",
-    repoLink: "https://github.com/pramanikankush/your-invoice.git"
+    title: "Code Explainer Enterprise",
+    category: "AI Code Analytics",
+    description: "Production-ready GenAI platform for deep code understanding, Big-O complexity analysis, security smell detection, and automated JUnit test generation. Note: Wake Backend first to spin up the API if cold.",
+    tech: ["FastAPI", "Next.js", "Gemini AI", "Pydantic", "Tailwind", "Docker"],
+    image: "/images/projects/code-explainer-preview.png",
+    demoLink: "https://ai-code-explainer-frontend.onrender.com",
+    repoLink: "https://github.com/pramanikankush/AI-Code-Explainer-",
+    backendLink: "https://ai-code-explainer-backend.onrender.com/health"
   },
   {
     title: "Personal Cloud Storage",
@@ -138,6 +140,12 @@ export const Projects: React.FC = () => {
                       Live View
                       <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
+                    {project.backendLink && (
+                      <a href={project.backendLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-orange hover:text-white transition-colors">
+                        Wake Backend
+                        <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                      </a>
+                    )}
                     <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 hover:text-white transition-colors">
                       Codebase
                       <svg className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>

@@ -44,13 +44,14 @@ PORTFOLIO PROJECTS (Detailed Knowledge):
    - GitHub: https://github.com/pramanikankush/AI-Resume-ATS
    - Impact: Streamlines candidate screening using advanced semantic vector search and comprehensive multi-dimensional scoring models.
 
-4. **Smart Invoice Scanner - Document Intelligence**
-   - Description: AI-powered invoice extraction and management system
-   - Features: Automatically scan, extract, edit, verify invoice data with dashboard analytics and Excel export
-   - Tech Stack: Gemini AI, Python, Flask, OCR
-   - Live Demo: https://your-invoice.onrender.com/
-   - GitHub: https://github.com/pramanikankush/your-invoice.git
-   - Impact: Automates tedious invoice processing, saving hours of manual data entry
+4. **Code Explainer Enterprise - AI Dev Tool**
+   - Description: Production-ready GenAI platform for code understanding, complexity analysis, and automated test generation
+   - Features: Real-time analysis for Java, Python, TypeScript, JS, Go, and C++; architecture breakdown and Big-O reasoning; security smells and refactoring; automated JUnit-style test generation
+   - Tech Stack: FastAPI, Next.js, Google Generative AI, Pydantic, Docker
+   - Live Demo: https://ai-code-explainer-frontend.onrender.com
+   - Backend Demo/Health: https://ai-code-explainer-backend.onrender.com/health
+   - GitHub: https://github.com/pramanikankush/AI-Code-Explainer-
+   - Impact: Dramatically speeds up developer onboarding and refactoring by translating complex source code into strict, structured architecture summaries and generated tests.
 
 5. **Personal Cloud Storage - AI File Management**
    - Description: AI-powered file organization and secure cloud storage platform
@@ -237,9 +238,9 @@ const getStaticResponse = (message: string): string | null => {
       "3. **AI Resume ATS Platform**\n" +
       "   Semantic candidate screening ATS platform.\n" +
       "   • [Live Demo](https://ai-resume-ats-ho41.onrender.com/) | [GitHub](https://github.com/pramanikankush/AI-Resume-ATS)\n\n" +
-      "4. **Smart Invoice Scanner**\n" +
-      "   AI invoice extraction and management platform.\n" +
-      "   • [Live Demo](https://your-invoice.onrender.com/) | [GitHub](https://github.com/pramanikankush/your-invoice.git)\n\n" +
+      "4. **Code Explainer Enterprise**\n" +
+      "   Deep code understanding and JUnit test generation platform.\n" +
+      "   • [Live Demo](https://ai-code-explainer-frontend.onrender.com) | [GitHub](https://github.com/pramanikankush/AI-Code-Explainer-)\n\n" +
       "5. **Personal Cloud Storage**\n" +
       "   AI-powered file management with Stripe payments.\n" +
       "   • [Live Demo](https://personal-cloud-two.vercel.app/) | [GitHub](https://github.com/pramanikankush/personal-cloud.git)";
@@ -270,12 +271,12 @@ const getStaticResponse = (message: string): string | null => {
       "• [GitHub Repository](https://github.com/pramanikankush/AI-Resume-ATS)";
   }
 
-  if (clean.includes('invoice scanner') || clean.includes('ocr') || clean.includes('invoice scanner')) {
-    return "**Smart Invoice Scanner**\n\n" +
-      "AI-powered invoice extraction and management system. Automatically scan, extract, edit, and verify invoice data with dashboard analytics and Excel export capabilities.\n\n" +
-      "• **Tech Stack**: Gemini AI, Python, Flask, OCR\n" +
-      "• [Live Demo](https://your-invoice.onrender.com/)\n" +
-      "• [GitHub Repository](https://github.com/pramanikankush/your-invoice.git)";
+  if (clean.includes('invoice scanner') || clean.includes('code explainer') || clean.includes('explainer') || clean.includes('code understanding')) {
+    return "**Code Explainer Enterprise**\n\n" +
+      "Production-ready GenAI platform for code understanding with architecture insights, Big-O complexity analysis, security smells, and generated JUnit tests. Note: Render hosted backend must be woken up via the Wake Backend link before using.\n\n" +
+      "• **Tech Stack**: FastAPI, Next.js, Google Generative AI, Pydantic, Docker\n" +
+      "• [Live Demo](https://ai-code-explainer-frontend.onrender.com)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/AI-Code-Explainer-)";
   }
 
   if (clean.includes('personal cloud') || clean.includes('cloud storage') || clean.includes('file management')) {
