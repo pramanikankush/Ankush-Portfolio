@@ -195,20 +195,20 @@ All components are fully responsive with mobile-first design:
 
 ## 🎨 Featured Projects
 
-### 1. **LexAI - Legal RAG Advisor**
-Intelligent legal document analysis with RAG architecture
-- 🔗 [Live Demo](https://legal-rag-2.vercel.app/)
-- 💻 [GitHub](https://github.com/pramanikankush/legal-rag-2.git)
+### 1. **Text-to-SQL Enterprise**
+Natural language to SQL analytics platform with safe execution, schema understanding, and a Streamlit UI
+- 🔗 [Live Demo](https://text-to-sql-enterprise-rag-u44ae2is6ppvvu77kxn5qh.streamlit.app)
+- 💻 [GitHub](https://github.com/pramanikankush/Text-To-Sql-Enterprise-RAG)
 
-### 2. **YouTube Stats Tracker Builder**
-Chrome extension generator for YouTube analytics
-- 🔗 [Live Demo](https://youtube-stats-extension-builder.vercel.app/)
-- 💻 [GitHub](https://github.com/pramanikankush/Youtube-stats-extension-builder.git)
+### 2. **BioMed RAG**
+Medical RAG SaaS platform with hybrid search & diagnostics
+- 🔗 [Live Demo](https://biomed-rag-1.onrender.com)
+- 💻 [GitHub](https://github.com/pramanikankush/BioMed-RAG)
 
-### 3. **Plant Health Analyzer**
-AI-powered plant disease detection system
-- 🔗 [Live Demo](https://plant-health-analyzer-1.onrender.com/)
-- 💻 [GitHub](https://github.com/pramanikankush/Plant-Health-Analyzer.git)
+### 3. **AI Resume ATS Platform**
+Applicant Tracking System with semantic matching & automated scoring
+- 🔗 [Live Demo](https://ai-resume-ats-ho41.onrender.com/)
+- 💻 [GitHub](https://github.com/pramanikankush/AI-Resume-ATS)
 
 ### 4. **Smart Invoice Scanner**
 OCR-based invoice extraction and management

@@ -12,31 +12,31 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "LexAI",
-    category: "Legal RAG Advisor",
-    description: "An intelligent legal document analysis system powered by Retrieval-Augmented Generation. Provides instant legal insights, case analysis, and document review with AI-driven precision.",
-    tech: ["Next.js", "Gemini AI", "RAG", "TypeScript"],
-    image: "/images/projects/lexai-project.png",
-    demoLink: "https://legal-rag-2.vercel.app/",
-    repoLink: "https://github.com/pramanikankush/legal-rag-2.git"
+    title: "Text-to-SQL Enterprise",
+    category: "SQL RAG Analytics",
+    description: "Natural language to SQL analytics platform with safe execution, schema understanding, and a Streamlit UI.",
+    tech: ["FastAPI", "Streamlit", "SQLAlchemy", "ChromaDB", "Python", "Groq/Gemini"],
+    image: "/images/projects/text-to-sql-preview.png",
+    demoLink: "https://text-to-sql-enterprise-rag-u44ae2is6ppvvu77kxn5qh.streamlit.app",
+    repoLink: "https://github.com/pramanikankush/Text-To-Sql-Enterprise-RAG"
   },
   {
-    title: "YouTube Stats Tracker Builder",
-    category: "Chrome Extension",
-    description: "Generate custom YouTube Chrome extensions instantly. Track channel statistics, subscriber counts, and video analytics in real-time with a personalized dashboard experience.",
-    tech: ["Chrome API", "YouTube API", "TypeScript", "React"],
-    image: "/images/projects/youtube-stats-preview.png",
-    demoLink: "https://youtube-stats-extension-builder.vercel.app/",
-    repoLink: "https://github.com/pramanikankush/Youtube-stats-extension-builder.git"
+    title: "BioMed RAG",
+    category: "Medical AI SaaS",
+    description: "Production-grade Medical RAG SaaS platform featuring hybrid dense-sparse search, reciprocal rank fusion (RRF), real-time Web Search, and admin diagnostics dashboard.",
+    tech: ["FastAPI", "Bootstrap", "FAISS", "Cohere", "Groq", "Llama 3"],
+    image: "/images/projects/biomed-rag-preview.png",
+    demoLink: "https://biomed-rag-1.onrender.com",
+    repoLink: "https://github.com/pramanikankush/BioMed-RAG"
   },
   {
-    title: "Plant Health Analyzer",
-    category: "AI-Powered Agriculture",
-    description: "AI-powered disease detection and treatment system for plants. Upload plant images to receive instant diagnosis, treatment plans, progress tracking, and location-based alerts with PDF reports.",
-    tech: ["Gemini AI", "Python", "Flask", "Computer Vision"],
-    image: "/images/projects/plant-health-preview.png",
-    demoLink: "https://plant-health-analyzer-1.onrender.com/",
-    repoLink: "https://github.com/pramanikankush/Plant-Health-Analyzer.git"
+    title: "AI Resume ATS Platform",
+    category: "HR AI Screening",
+    description: "Applicant Tracking System with semantic matching via FAISS vector search, keyword overlap, automated scoring, batch processing, and PDF report generation.",
+    tech: ["FastAPI", "Streamlit", "FAISS", "Groq", "Gemini AI", "ReportLab"],
+    image: "/images/projects/ats-platform-preview.png",
+    demoLink: "https://ai-resume-ats-ho41.onrender.com/",
+    repoLink: "https://github.com/pramanikankush/AI-Resume-ATS"
   },
   {
     title: "Smart Invoice Scanner",
@@ -100,7 +100,7 @@ export const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 scale-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 scale-100 group-hover:scale-105 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
                 />
 
                 {/* Category Tag Overlay */}

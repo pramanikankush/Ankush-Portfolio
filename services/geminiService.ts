@@ -20,29 +20,29 @@ CORE EXPERTISE:
 
 PORTFOLIO PROJECTS (Detailed Knowledge):
 
-1. **LexAI - Legal RAG Advisor**
-   - Description: Intelligent legal document analysis system powered by Retrieval-Augmented Generation
-   - Features: Instant legal insights, case analysis, document review with AI-driven precision
-   - Tech Stack: Next.js, Gemini AI, RAG, TypeScript
-   - Live Demo: https://legal-rag-2.vercel.app/
-   - GitHub: https://github.com/pramanikankush/legal-rag-2.git
-   - Impact: Revolutionizes legal research by combining vector search with generative AI
+1. **Text-to-SQL Enterprise**
+   - Description: Natural language to SQL analytics platform with safe execution, schema understanding, and a Streamlit UI
+   - Features: Natural language queries, database explorer, raw SQL editor, query history and performance metrics, schema indexing and retrieval
+   - Tech Stack: FastAPI, Streamlit, SQLAlchemy, ChromaDB, Python, Groq/Gemini
+   - Live Demo: https://text-to-sql-enterprise-rag-u44ae2is6ppvvu77kxn5qh.streamlit.app
+   - GitHub: https://github.com/pramanikankush/Text-To-Sql-Enterprise-RAG
+   - Impact: Streamlines database analytics by translating natural language into optimized and safe read-only SQL queries
 
-2. **YouTube Stats Tracker Builder - Chrome Extension**
-   - Description: Generate custom YouTube Chrome extensions instantly
-   - Features: Track channel statistics, subscriber counts, video analytics in real-time with personalized dashboard
-   - Tech Stack: Chrome API, YouTube API, TypeScript, React
-   - Live Demo: https://youtube-stats-extension-builder.vercel.app/
-   - GitHub: https://github.com/pramanikankush/Youtube-stats-extension-builder.git
-   - Impact: Empowers content creators with instant analytics without leaving YouTube
+2. **BioMed RAG - Medical AI SaaS**
+   - Description: Production-grade Medical RAG SaaS platform featuring hybrid search, reciprocal rank fusion (RRF), real-time Web Search, and admin diagnostics.
+   - Features: Medical Assistant chat feed, drag-and-drop document library ingestion, live web search context merging, structured JSON logging, admin health metrics and diagnostics.
+   - Tech Stack: FastAPI, Bootstrap, FAISS, Cohere, Groq (Llama 3)
+   - Live Demo: https://biomed-rag-1.onrender.com
+   - GitHub: https://github.com/pramanikankush/BioMed-RAG
+   - Impact: Delivers highly grounded, fast, and citation-backed medical answers by merging vector store and live web searches.
 
-3. **Plant Health Analyzer - AI Agriculture**
-   - Description: AI-powered disease detection and treatment system for plants
-   - Features: Upload plant images for instant diagnosis, treatment plans, progress tracking, location-based alerts, PDF reports
-   - Tech Stack: Gemini AI, Python, Flask, Computer Vision
-   - Live Demo: https://plant-health-analyzer-1.onrender.com/
-   - GitHub: https://github.com/pramanikankush/Plant-Health-Analyzer.git
-   - Impact: Helps farmers and gardeners identify plant diseases early and take corrective action
+3. **AI Resume ATS Platform - HR Tech**
+   - Description: Applicant Tracking System with semantic matching, AI-powered analysis, and an editorial design system
+   - Features: Resume/JD parsing, ATS scoring (keyword + semantic + skills coverage), skill extraction & missing skill detection, batch processing, PDF report generation, dashboard with metrics
+   - Tech Stack: FastAPI, Streamlit, FAISS, Groq, Gemini AI, ReportLab
+   - Live Demo: https://ai-resume-ats-ho41.onrender.com/
+   - GitHub: https://github.com/pramanikankush/AI-Resume-ATS
+   - Impact: Streamlines candidate screening using advanced semantic vector search and comprehensive multi-dimensional scoring models.
 
 4. **Smart Invoice Scanner - Document Intelligence**
    - Description: AI-powered invoice extraction and management system
@@ -228,15 +228,15 @@ const getStaticResponse = (message: string): string | null => {
   // All Projects bypass
   if (clean === 'show all projects' || clean === 'projects' || clean === 'show projects' || clean.includes('what projects') || clean.includes('your projects') || clean.includes('tell me about your projects')) {
     return "Here are the selected projects Ankush has built:\n\n" +
-      "1. **LexAI - Legal RAG Advisor**\n" +
-      "   Intelligent legal document analysis with RAG architecture.\n" +
-      "   • [Live Demo](https://legal-rag-2.vercel.app/) | [GitHub](https://github.com/pramanikankush/legal-rag-2.git)\n\n" +
-      "2. **YouTube Stats Tracker Builder**\n" +
-      "   Chrome extension generator for YouTube channel analytics.\n" +
-      "   • [Live Demo](https://youtube-stats-extension-builder.vercel.app/) | [GitHub](https://github.com/pramanikankush/Youtube-stats-extension-builder.git)\n\n" +
-      "3. **Plant Health Analyzer**\n" +
-      "   AI-powered plant disease detection system.\n" +
-      "   • [Live Demo](https://plant-health-analyzer-1.onrender.com/) | [GitHub](https://github.com/pramanikankush/Plant-Health-Analyzer.git)\n\n" +
+      "1. **Text-to-SQL Enterprise**\n" +
+      "   Natural language to SQL analytics platform with schema understanding.\n" +
+      "   • [Live Demo](https://text-to-sql-enterprise-rag-u44ae2is6ppvvu77kxn5qh.streamlit.app) | [GitHub](https://github.com/pramanikankush/Text-To-Sql-Enterprise-RAG)\n\n" +
+      "2. **BioMed RAG**\n" +
+      "   Medical RAG SaaS platform with hybrid search & diagnostics.\n" +
+      "   • [Live Demo](https://biomed-rag-1.onrender.com) | [GitHub](https://github.com/pramanikankush/BioMed-RAG)\n\n" +
+      "3. **AI Resume ATS Platform**\n" +
+      "   Semantic candidate screening ATS platform.\n" +
+      "   • [Live Demo](https://ai-resume-ats-ho41.onrender.com/) | [GitHub](https://github.com/pramanikankush/AI-Resume-ATS)\n\n" +
       "4. **Smart Invoice Scanner**\n" +
       "   AI invoice extraction and management platform.\n" +
       "   • [Live Demo](https://your-invoice.onrender.com/) | [GitHub](https://github.com/pramanikankush/your-invoice.git)\n\n" +
@@ -246,28 +246,28 @@ const getStaticResponse = (message: string): string | null => {
   }
 
   // Specific project bypasses
-  if (clean.includes('lexai')) {
-    return "**LexAI - Legal RAG Advisor**\n\n" +
-      "An intelligent legal document analysis system powered by Retrieval-Augmented Generation (RAG). It provides instant legal insights, case analysis, and document review with AI-driven precision.\n\n" +
-      "• **Tech Stack**: Next.js, Gemini AI, RAG, TypeScript\n" +
-      "• [Live Demo](https://legal-rag-2.vercel.app/)\n" +
-      "• [GitHub Repository](https://github.com/pramanikankush/legal-rag-2.git)";
+  if (clean.includes('lexai') || clean.includes('sql enterprise') || clean.includes('text-to-sql') || clean.includes('text to sql')) {
+    return "**Text-to-SQL Enterprise**\n\n" +
+      "Natural language to SQL analytics platform with safe execution, schema understanding, and a Streamlit UI.\n\n" +
+      "• **Tech Stack**: FastAPI, Streamlit, SQLAlchemy, ChromaDB, Python, Groq/Gemini\n" +
+      "• [Live Demo](https://text-to-sql-enterprise-rag-u44ae2is6ppvvu77kxn5qh.streamlit.app)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/Text-To-Sql-Enterprise-RAG)";
   }
 
-  if (clean.includes('youtube stats') || clean.includes('youtube tracker') || clean.includes('chrome extension')) {
-    return "**YouTube Stats Tracker Builder**\n\n" +
-      "Generate custom YouTube Chrome extensions instantly. Track channel statistics, subscriber counts, and video analytics in real-time with a personalized dashboard experience.\n\n" +
-      "• **Tech Stack**: Chrome API, YouTube API, TypeScript, React\n" +
-      "• [Live Demo](https://youtube-stats-extension-builder.vercel.app/)\n" +
-      "• [GitHub Repository](https://github.com/pramanikankush/Youtube-stats-extension-builder.git)";
+  if (clean.includes('youtube stats') || clean.includes('biomed') || clean.includes('medical rag') || clean.includes('biomed-rag')) {
+    return "**BioMed RAG - Medical AI SaaS**\n\n" +
+      "A professional, production-grade Medical Retrieval Augmented Generation (RAG) SaaS application featuring hybrid search, RRF confidence scoring, file library management, and system diagnostics.\n\n" +
+      "• **Tech Stack**: FastAPI, Bootstrap, FAISS, Cohere, Groq (Llama 3)\n" +
+      "• [Live Demo](https://biomed-rag-1.onrender.com)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/BioMed-RAG)";
   }
 
-  if (clean.includes('plant health') || clean.includes('plant disease') || clean.includes('agriculture')) {
-    return "**Plant Health Analyzer**\n\n" +
-      "AI-powered disease detection and treatment system for plants. Upload plant images to receive instant diagnosis, treatment plans, progress tracking, and location-based alerts with PDF reports.\n\n" +
-      "• **Tech Stack**: Gemini AI, Python, Flask, Computer Vision\n" +
-      "• [Live Demo](https://plant-health-analyzer-1.onrender.com/)\n" +
-      "• [GitHub Repository](https://github.com/pramanikankush/Plant-Health-Analyzer.git)";
+  if (clean.includes('plant health') || clean.includes('resume screening') || clean.includes('ats') || clean.includes('resume ats')) {
+    return "**AI Resume ATS Platform**\n\n" +
+      "Production-grade Applicant Tracking System with semantic matching via FAISS vector search, automated ATS scoring, batch processing, and PDF report generation.\n\n" +
+      "• **Tech Stack**: FastAPI, Streamlit, FAISS, Groq, Gemini AI, ReportLab\n" +
+      "• [Live Demo](https://ai-resume-ats-ho41.onrender.com/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/AI-Resume-ATS)";
   }
 
   if (clean.includes('invoice scanner') || clean.includes('ocr') || clean.includes('invoice scanner')) {
