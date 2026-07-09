@@ -220,6 +220,12 @@ AI-powered file organization with Stripe integration
 - 🔗 [Live Demo](https://personal-cloud-two.vercel.app/)
 - 💻 [GitHub](https://github.com/pramanikankush/personal-cloud.git)
 
+### 6. **DocuMind**
+AI document intelligence chatbot with Gemini embeddings and FAISS retrieval
+- 🔗 [Live Demo](https://cslvjnce36qtji4n7nrstq.streamlit.app/)
+- 💻 [GitHub](https://github.com/pramanikankush/DocuMind)
+
+
 ---
 
 ## 🔧 Troubleshooting

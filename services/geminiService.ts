@@ -61,6 +61,14 @@ PORTFOLIO PROJECTS (Detailed Knowledge):
    - GitHub: https://github.com/pramanikankush/personal-cloud.git
    - Impact: Combines cloud storage with AI-driven organization and search
 
+6. **DocuMind - Document Intelligence**
+   - Description: AI-powered document intelligence chatbot. Upload PDFs, extract text, split into overlapping semantic chunks, embed using Google's Gemini embeddings, and chat with context grounding.
+   - Features: PDF upload & parsing up to 50MB, semantic chunking and FAISS vector index search, conversation memory history with 24h TTL, citations with source file/page numbers.
+   - Tech Stack: Streamlit, Gemini AI, FAISS, Python, Docker
+   - Live Demo: https://cslvjnce36qtji4n7nrstq.streamlit.app/
+   - GitHub: https://github.com/pramanikankush/DocuMind
+   - Impact: Delivers highly grounded natural-language answers and source page citations directly from large document vaults.
+
 TECHNICAL_SKILLS:
 - **Loop Engineering**: Designing autonomous agent loops that run, observe, and retry until a goal is met
 - **Agentic AI & Multi-Agent Systems**: Using specialized agents coordinated by an orchestration layer
@@ -243,7 +251,10 @@ const getStaticResponse = (message: string): string | null => {
       "   • [Live Demo](https://ai-code-explainer-frontend.onrender.com) | [GitHub](https://github.com/pramanikankush/AI-Code-Explainer-)\n\n" +
       "5. **Personal Cloud Storage**\n" +
       "   AI-powered file management with Stripe payments.\n" +
-      "   • [Live Demo](https://personal-cloud-two.vercel.app/) | [GitHub](https://github.com/pramanikankush/personal-cloud.git)";
+      "   • [Live Demo](https://personal-cloud-two.vercel.app/) | [GitHub](https://github.com/pramanikankush/personal-cloud.git)\n\n" +
+      "6. **DocuMind**\n" +
+      "   AI document intelligence chatbot with Gemini embeddings.\n" +
+      "   • [Live Demo](https://cslvjnce36qtji4n7nrstq.streamlit.app/) | [GitHub](https://github.com/pramanikankush/DocuMind)";
   }
 
   // Specific project bypasses
@@ -285,6 +296,14 @@ const getStaticResponse = (message: string): string | null => {
       "• **Tech Stack**: Next.js, Gemini AI, Stripe, Clerk Auth\n" +
       "• [Live Demo](https://personal-cloud-two.vercel.app/)\n" +
       "• [GitHub Repository](https://github.com/pramanikankush/personal-cloud.git)";
+  }
+
+  if (clean.includes('documind') || clean.includes('document intelligence') || clean.includes('pdf chat')) {
+    return "**DocuMind**\n\n" +
+      "AI-powered document intelligence chatbot. Upload PDFs, extract text, split into overlapping semantic chunks, embed using Google's Gemini embeddings, and chat with context grounding.\n\n" +
+      "• **Tech Stack**: Streamlit, Gemini AI, FAISS, Python, Docker\n" +
+      "• [Live Demo](https://cslvjnce36qtji4n7nrstq.streamlit.app/)\n" +
+      "• [GitHub Repository](https://github.com/pramanikankush/DocuMind)";
   }
 
   return null;

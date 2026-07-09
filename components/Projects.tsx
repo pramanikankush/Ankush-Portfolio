@@ -57,6 +57,15 @@ const projects: Project[] = [
     image: "/images/projects/personal-cloud-preview.png",
     demoLink: "https://personal-cloud-two.vercel.app/",
     repoLink: "https://github.com/pramanikankush/personal-cloud.git"
+  },
+  {
+    title: "DocuMind",
+    category: "Document Intelligence",
+    description: "AI-powered document intelligence. Upload PDFs, extract text, split into overlapping semantic chunks, embed using Google's Gemini embeddings, and chat with context grounding.",
+    tech: ["Streamlit", "Gemini AI", "FAISS", "Python", "Docker"],
+    image: "/images/projects/documind-preview.png",
+    demoLink: "https://cslvjnce36qtji4n7nrstq.streamlit.app/",
+    repoLink: "https://github.com/pramanikankush/DocuMind"
   }
 ];
 
@@ -80,7 +89,7 @@ export const Projects: React.FC = () => {
             </h2>
           </div>
           <div className="hidden md:block mb-2">
-            <span className="font-mono text-xs text-neutral-500">INDEX: 001 - 005</span>
+            <span className="font-mono text-xs text-neutral-500">INDEX: 001 - 006</span>
           </div>
         </div>
 

@@ -63,7 +63,7 @@ MessageBubble.displayName = 'MessageBubble';
 
 export const AiAgent: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: '**Identity verified. Protocol v2.5 initialized.**\n\nI am Ankush Pramanik\'s digital twin - your gateway to understanding his AI engineering capabilities.\n\nI have comprehensive knowledge of:\n• 5 production-grade AI projects (Text-to-SQL Enterprise, BioMed RAG, AI Resume ATS Platform, Code Explainer Enterprise, and more)\n• Expertise in RAG systems, LLMs, and agentic workflows\n• Full-stack development with Python, TypeScript, React, and Next.js\n\nAsk me anything about Ankush\'s projects, skills, or experience. I can provide live demo links, technical details, and GitHub repositories.' }
+    { role: 'model', text: '**Identity verified. Protocol v2.5 initialized.**\n\nI am Ankush Pramanik\'s digital twin - your gateway to understanding his AI engineering capabilities.\n\nI have comprehensive knowledge of:\n• 6 production-grade AI projects (Text-to-SQL Enterprise, BioMed RAG, AI Resume ATS Platform, Code Explainer Enterprise, DocuMind, and more)\n• Expertise in RAG systems, LLMs, and agentic workflows\n• Full-stack development with Python, TypeScript, React, and Next.js\n\nAsk me anything about Ankush\'s projects, skills, or experience. I can provide live demo links, technical details, and GitHub repositories.' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
