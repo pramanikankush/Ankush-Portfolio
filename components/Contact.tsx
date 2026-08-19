@@ -16,10 +16,20 @@ export const Contact: React.FC = () => {
                   I am currently available for freelance projects and full-time roles in AI Architecture and Agentic Workflow design.
                </p>
 
-               <a href="mailto:ankushpramanik@gmail.com" className="group inline-flex items-center gap-3 px-8 py-4 bg-brand-orange text-white font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 rounded-sm">
-                  <span>Initialize Contact</span>
-                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-               </a>
+               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a href="mailto:ankushpramanik@gmail.com" className="group inline-flex items-center gap-3 px-8 py-4 bg-brand-orange text-white font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 rounded-sm">
+                     <span>Initialize Contact</span>
+                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </a>
+                  <a
+                     href="/Ankush_Pramanik_Resume.pdf"
+                     download="Ankush_Pramanik_Resume.pdf"
+                     className="group inline-flex items-center gap-3 px-8 py-4 border border-brand-orange text-brand-orange font-bold tracking-widest uppercase hover:bg-brand-orange hover:text-white transition-all duration-300 rounded-sm"
+                  >
+                     <span>Resume</span>
+                     <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                  </a>
+               </div>
             </div>
 
             <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-neutral-900 pt-12">

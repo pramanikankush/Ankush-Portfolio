@@ -27,3 +27,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Tool metadata
+.freebuff/
+
+# Root-level duplicate resume (canonical copy lives in public/)
+/Ankush_Pramanik_Resume.pdf
